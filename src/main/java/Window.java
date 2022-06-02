@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Window extends JFrame {
+    public static void main(String[] args){
+        Window window = new Window();
+    }
+
     public static final int WINDOW_WHIDTH = 500;
     public static final int WINDOW_HIGHET = 700;
 
