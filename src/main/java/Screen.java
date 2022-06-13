@@ -25,6 +25,7 @@ public class Screen extends JPanel {
         add(start);
 
         start.addActionListener((event) -> {
+            int a;
 
             start();
 
