@@ -26,7 +26,7 @@ public class Screen extends JPanel {
 
         start.addActionListener((event) -> {
 
-
+            start();
 
             start.setVisible(false);
         });
