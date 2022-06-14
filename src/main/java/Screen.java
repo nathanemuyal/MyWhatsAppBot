@@ -30,6 +30,12 @@ public class Screen extends JPanel {
             theBot.start();
         });
 
+        if(theBot.activateQR==true){
+            g.drawString("welcome ", 0, 0);
+            g.setFont(new Font("serif", Font.BOLD, 70));
+            g.setColor(Color.black);
+        }
+
     }
 
 }

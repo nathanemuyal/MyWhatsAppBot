@@ -15,13 +15,9 @@ public class TheBot {
         driver.get("https://web.whatsapp.com/");
 
         while (activateQR==false){
-            if (driver.getPageSource().contains("_2v0ig"));
+            if (driver.getPageSource().contains("_13NKt copyable-text selectable-text"));
             activateQR=true;
         }
-
-
-        // System.out.println(11);
-
 
     }
 
