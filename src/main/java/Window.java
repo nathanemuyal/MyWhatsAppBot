@@ -7,7 +7,7 @@ public class Window extends JFrame {
     }
 
     public static final int WINDOW_WHIDTH = 500;
-    public static final int WINDOW_HIGHET = 700;
+    public static final int WINDOW_HIGHET = 400;
 
     public Window() {
         Screen screen = new Screen(0, 0, WINDOW_WHIDTH, WINDOW_HIGHET, Color.cyan);
