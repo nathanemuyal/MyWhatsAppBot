@@ -32,13 +32,13 @@ public class Screen extends JPanel {
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-       //color + logo
+        //color + logo
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, getWidth(), getHeight());
 
         g.drawImage(this.logo.getImage(), 0, 0, 100, 20, null);
 
-       if (!this.theBot.getActivateQR()) {
+        if (!this.theBot.getActivateQR()) {
 
             start.setBounds(getWidth() / 2 - 50, getHeight() / 2, 100, 30);
             add(start);
@@ -118,7 +118,7 @@ public class Screen extends JPanel {
             noPhone();
             return false;
         }
-
+//
         if (numPhoneText.getText().length() != 10 && numPhoneText.getText().length() != 13) {
             noCorrectPhone();
             return false;
@@ -131,8 +131,8 @@ public class Screen extends JPanel {
 
             }
             if (str.equals("05")) {
-                control=2;
-            }else {
+                control = 2;
+            } else {
                 noCorrectPhone();
                 return false;
             }
@@ -142,8 +142,8 @@ public class Screen extends JPanel {
                 str += numPhoneText.getText().charAt(i);
             }
             if (str.equals("+9725")) {
-                control=5;
-            }else {
+                control = 5;
+            } else {
                 noCorrectPhone();
                 return false;
             }
@@ -177,6 +177,7 @@ public class Screen extends JPanel {
     public void noCorrectText() {
         JOptionPane.showMessageDialog(this, "No text");
     }
+
     public void isSend() {
         JOptionPane.showMessageDialog(this, "shipped successfully");
     }

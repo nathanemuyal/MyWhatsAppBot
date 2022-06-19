@@ -3,14 +3,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import javax.swing.*;
-
 public class TheBot {
     ChromeDriver driver;
     public boolean activateQR = false;
     final String httpsToChat = "https://web.whatsapp.com/send?phone=972";
     String thePhone = "";
-    String text;
+    String text = "";
 
 
     public void setThePhone(String thePhone, int control) {
@@ -49,12 +47,17 @@ public class TheBot {
         driver.get(httpsToChat + thePhone);
         thePhone = "";
 
-        Thread.sleep(20000);
-        WebElement textInput = driver.findElement(By.className("_1UWac _1LbR4"));
-        textInput.sendKeys(text);
+        // is in chat
+        boolean find = false;
+        while (!find) {
+            if (driver.getPageSource().contains("clip"))
+                find = true;
+        }
+        //send
+        Thread.sleep(1000);
+        driver.findElement(By.className("_1LbR4")).findElement(By.className("_13NKt")).sendKeys(text + Keys.ENTER);
 
-        //driver.manage().window().minimize();
-
+        driver.manage().window().minimize();
 
     }
 
