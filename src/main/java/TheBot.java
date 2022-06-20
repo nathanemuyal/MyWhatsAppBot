@@ -1,11 +1,12 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TheBot {
+
     ChromeDriver driver;
-    public boolean activateQR = false;
+    boolean activateQR = false;
+    boolean isSend = false;
     final String httpsToChat = "https://web.whatsapp.com/send?phone=972";
     String thePhone = "";
     String text = "";
@@ -23,6 +24,10 @@ public class TheBot {
 
     public boolean getActivateQR() {
         return activateQR;
+    }
+
+    public boolean getIsSend() {
+        return isSend;
     }
 
     public void start() throws InterruptedException {
@@ -56,6 +61,7 @@ public class TheBot {
         //send
         Thread.sleep(1000);
         driver.findElement(By.className("_1LbR4")).findElement(By.className("_13NKt")).sendKeys(text + Keys.ENTER);
+        isSend = true;
 
         driver.manage().window().minimize();
 
